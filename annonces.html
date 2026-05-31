@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Annonces — La Table des Stratèges</title>
+  <meta name="description" content="Tableau d'affichage officiel du club. Annonces importantes, tournois et duels.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>♟</text></svg>">
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="navbar-brand">
+      <div class="navbar-logo-icon">♟</div>
+      <span class="navbar-title">La <em>Table</em> des Stratèges</span>
+    </div>
+    <button class="navbar-toggle" id="navbar-toggle" aria-label="Menu">☰</button>
+    <ul class="navbar-nav" id="navbar-nav">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="classement.html">Classement</a></li>
+      <li><a href="annonces.html">Annonces</a></li>
+      <li><a href="activites.html">Activités</a></li>
+      <li><a href="index.html#whatsapp" class="navbar-cta btn">♟ Rejoindre</a></li>
+    </ul>
+  </nav>
+
+  <!-- ── EN-TÊTE ── -->
+  <div style="background:var(--noir);padding:52px 40px 48px;border-bottom:1px solid rgba(184,146,74,0.2);">
+    <div style="max-width:1200px;margin:0 auto;">
+      <div class="section-eyebrow" style="color:var(--or);">
+        <span style="background:var(--or);width:28px;height:1px;display:inline-block;opacity:.6;"></span>
+        Tableau d'affichage officiel
+        <span style="background:var(--or);width:28px;height:1px;display:inline-block;opacity:.6;"></span>
+      </div>
+      <h1 style="font-family:var(--font-titre);font-size:clamp(2.2rem,5vw,3.5rem);font-weight:700;color:#fff;margin-top:8px;">
+        <em style="color:var(--or);font-style:italic;">Annonces</em> du Club
+      </h1>
+      <p style="color:rgba(255,255,255,0.45);margin-top:10px;font-size:14px;max-width:500px;">
+        Communications officielles, résultats de tournois, duels et informations générales.
+      </p>
+      <!-- Filtres catégories -->
+      <div style="display:flex;gap:10px;margin-top:24px;flex-wrap:wrap;" id="filtres-annonces">
+        <button class="btn" style="padding:8px 16px;font-size:12px;background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.15);" data-filtre="tous" onclick="filtrerAnnonces(this, 'tous')">Toutes</button>
+        <button class="btn" style="padding:8px 16px;font-size:12px;background:rgba(139,38,53,0.2);color:#E87F8A;border:1px solid rgba(139,38,53,0.4);" data-filtre="important" onclick="filtrerAnnonces(this, 'important')">🔴 Important</button>
+        <button class="btn" style="padding:8px 16px;font-size:12px;background:rgba(36,76,102,0.3);color:#7BBBD8;border:1px solid rgba(36,76,102,0.4);" data-filtre="duel" onclick="filtrerAnnonces(this, 'duel')">⚔️ Duels</button>
+        <button class="btn" style="padding:8px 16px;font-size:12px;background:rgba(184,146,74,0.2);color:var(--or);border:1px solid rgba(184,146,74,0.3);" data-filtre="tournoi" onclick="filtrerAnnonces(this, 'tournoi')">🏆 Tournois</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ANNONCES ── -->
+  <section class="section" aria-labelledby="annonces-heading">
+    <div class="container">
+      <div class="annonces-grid js-zone" id="annonces-container">
+        <div style="text-align:center;padding:40px;color:var(--gris-moyen);font-style:italic;">
+          Chargement des annonces…
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <span class="footer-brand">La Table des Stratèges © 2025</span>
+      <ul class="footer-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="classement.html">Classement</a></li>
+        <li><a href="annonces.html">Annonces</a></li>
+        <li><a href="activites.html">Activités</a></li>
+      </ul>
+      <a href="admin.html" class="footer-admin">⚙ Espace Admin</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    let filtreActif = 'tous';
+    function filtrerAnnonces(btn, filtre) {
+      filtreActif = filtre;
+      document.querySelectorAll('.annonce-card').forEach(card => {
+        if (filtre === 'tous') {
+          card.style.display = '';
+        } else {
+          card.style.display = card.classList.contains('cat-' + filtre) ? '' : 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

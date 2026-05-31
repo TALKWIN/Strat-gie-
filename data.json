@@ -1,0 +1,159 @@
+{
+  "club": {
+    "name": "La Table des Stratèges",
+    "whatsapp_link": "https://chat.whatsapp.com/VOTRE_LIEN_ICI",
+    "champion": {
+      "pseudo": "Google_maitre",
+      "elo_rapid": 1847,
+      "crowned_date": "2025-01-15",
+      "avatar": "GM"
+    },
+    "challenger": null
+  },
+  "joueurs": [
+    {
+      "id": 1,
+      "pseudo": "Google_maitre",
+      "avatar": "GM",
+      "elo": {
+        "rapide": { "actuel": 1847, "debut_mois": 1732, "reference_palier": 1700 },
+        "blitz":  { "actuel": 1791, "debut_mois": 1750, "reference_palier": 1700 },
+        "bullet": { "actuel": 1654, "debut_mois": 1610, "reference_palier": 1600 }
+      },
+      "derniere_partie": { "rapide": "victoire", "blitz": "victoire", "bullet": "victoire" },
+      "parties_ce_mois": 42
+    },
+    {
+      "id": 2,
+      "pseudo": "bap_19",
+      "avatar": "B9",
+      "elo": {
+        "rapide": { "actuel": 1723, "debut_mois": 1680, "reference_palier": 1700 },
+        "blitz":  { "actuel": 1698, "debut_mois": 1642, "reference_palier": 1600 },
+        "bullet": { "actuel": 1589, "debut_mois": 1540, "reference_palier": 1500 }
+      },
+      "derniere_partie": { "rapide": "victoire", "blitz": "defaite", "bullet": "victoire" },
+      "parties_ce_mois": 31
+    },
+    {
+      "id": 3,
+      "pseudo": "kkstar34",
+      "avatar": "KK",
+      "elo": {
+        "rapide": { "actuel": 1612, "debut_mois": 1665, "reference_palier": 1600 },
+        "blitz":  { "actuel": 1580, "debut_mois": 1631, "reference_palier": 1600 },
+        "bullet": { "actuel": 1540, "debut_mois": 1595, "reference_palier": 1500 }
+      },
+      "derniere_partie": { "rapide": "defaite", "blitz": "defaite", "bullet": "defaite" },
+      "parties_ce_mois": 18
+    },
+    {
+      "id": 4,
+      "pseudo": "Axelhapali",
+      "avatar": "AX",
+      "elo": {
+        "rapide": { "actuel": 1558, "debut_mois": 1443, "reference_palier": 1400 },
+        "blitz":  { "actuel": 1502, "debut_mois": 1387, "reference_palier": 1400 },
+        "bullet": { "actuel": 1471, "debut_mois": 1360, "reference_palier": 1300 }
+      },
+      "derniere_partie": { "rapide": "victoire", "blitz": "victoire", "bullet": "victoire" },
+      "parties_ce_mois": 57
+    },
+    {
+      "id": 5,
+      "pseudo": "Jean_Daniel23",
+      "avatar": "JD",
+      "elo": {
+        "rapide": { "actuel": 1490, "debut_mois": 1490, "reference_palier": 1400 },
+        "blitz":  { "actuel": 1445, "debut_mois": 1445, "reference_palier": 1400 },
+        "bullet": { "actuel": 1398, "debut_mois": 1398, "reference_palier": 1300 }
+      },
+      "derniere_partie": { "rapide": "victoire", "blitz": "victoire", "bullet": "defaite" },
+      "parties_ce_mois": 0
+    },
+    {
+      "id": 6,
+      "pseudo": "ReineDuNord",
+      "avatar": "RN",
+      "elo": {
+        "rapide": { "actuel": 1780, "debut_mois": 1722, "reference_palier": 1700 },
+        "blitz":  { "actuel": 1744, "debut_mois": 1690, "reference_palier": 1700 },
+        "bullet": { "actuel": 1700, "debut_mois": 1648, "reference_palier": 1600 }
+      },
+      "derniere_partie": { "rapide": "victoire", "blitz": "victoire", "bullet": "defaite" },
+      "parties_ce_mois": 39
+    },
+    {
+      "id": 7,
+      "pseudo": "PhilippeLeRoc",
+      "avatar": "PL",
+      "elo": {
+        "rapide": { "actuel": 1643, "debut_mois": 1702, "reference_palier": 1700 },
+        "blitz":  { "actuel": 1617, "debut_mois": 1672, "reference_palier": 1600 },
+        "bullet": { "actuel": 1588, "debut_mois": 1640, "reference_palier": 1600 }
+      },
+      "derniere_partie": { "rapide": "defaite", "blitz": "defaite", "bullet": "defaite" },
+      "parties_ce_mois": 14
+    },
+    {
+      "id": 8,
+      "pseudo": "MagicRook88",
+      "avatar": "MR",
+      "elo": {
+        "rapide": { "actuel": 1531, "debut_mois": 1510, "reference_palier": 1500 },
+        "blitz":  { "actuel": 1499, "debut_mois": 1475, "reference_palier": 1400 },
+        "bullet": { "actuel": 1460, "debut_mois": 1440, "reference_palier": 1400 }
+      },
+      "derniere_partie": { "rapide": "victoire", "blitz": "defaite", "bullet": "victoire" },
+      "parties_ce_mois": 22
+    }
+  ],
+  "annonces": [
+    {
+      "id": 1,
+      "date": "2025-05-28",
+      "auteur": "Admin",
+      "titre": "Tournoi des Candidats — Lancement officiel",
+      "texte": "Le Tournoi des Candidats pour le titre de Champion du Club est officiellement lancé. 8 joueurs s'affrontent en système Round-Robin pour désigner le prochain challenger de Google_maitre. Les résultats seront mis à jour en temps réel sur ce tableau d'affichage.",
+      "categorie": "tournoi"
+    },
+    {
+      "id": 2,
+      "date": "2025-05-20",
+      "auteur": "Admin",
+      "titre": "CHOC : Axelhapali défie ReineDuNord sur 5 parties",
+      "texte": "Un duel épique s'est tenu ce weekend entre Axelhapali et ReineDuNord. Après 5 parties âprement disputées, c'est Axelhapali qui l'emporte 3-2 dans un marathon de 4h30. Une performance remarquable pour le joueur en feu du mois.",
+      "categorie": "duel"
+    },
+    {
+      "id": 3,
+      "date": "2025-05-15",
+      "auteur": "Admin",
+      "titre": "Mise à jour du règlement — Cadence Bullet officielle",
+      "texte": "Suite à la demande générale du club, la cadence Bullet (1+0) est désormais officiellement intégrée au classement. Le classement Bullet est calculé séparément et n'interfère pas avec les classements Rapide et Blitz.",
+      "categorie": "important"
+    },
+    {
+      "id": 4,
+      "date": "2025-05-10",
+      "auteur": "Admin",
+      "titre": "Bienvenue à Jean_Daniel23 — Nouvelle recrue",
+      "texte": "Le club accueille chaleureusement Jean_Daniel23 dans ses rangs. Après une période de calibration, il est officiellement intégré au classement avec un Elo de départ de 1490 en Rapide. Bienvenue parmi les stratèges !",
+      "categorie": "important"
+    },
+    {
+      "id": 5,
+      "date": "2025-04-30",
+      "auteur": "Admin",
+      "titre": "TOURNOI MENSUEL D'AVRIL — Résultats finaux",
+      "texte": "Le tournoi mensuel d'Avril s'est conclu avec une victoire éclatante de Google_maitre qui consolide ainsi sa position de Champion du Club. Retrouvez tous les résultats détaillés dans la section Activités.",
+      "categorie": "tournoi"
+    }
+  ],
+  "historique_joueurs_du_mois": [
+    { "mois": "Avril 2025", "pseudo": "Google_maitre", "avatar": "GM", "gain_elo": "+127", "cadence": "Rapide" },
+    { "mois": "Mars 2025", "pseudo": "ReineDuNord", "avatar": "RN", "gain_elo": "+98", "cadence": "Blitz" },
+    { "mois": "Février 2025", "pseudo": "Axelhapali", "avatar": "AX", "gain_elo": "+83", "cadence": "Rapide" },
+    { "mois": "Janvier 2025", "pseudo": "bap_19", "avatar": "B9", "gain_elo": "+61", "cadence": "Bullet" }
+  ]
+}
