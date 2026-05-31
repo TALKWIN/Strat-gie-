@@ -3,7 +3,7 @@
     "name": "La Table des Stratèges",
     "whatsapp_link": "https://chat.whatsapp.com/VOTRE_LIEN_ICI",
     "champion": {
-      "pseudo": "Google_maitre",
+      "pseudo": "Player1",
       "elo_rapid": 1847,
       "crowned_date": "2025-01-15",
       "avatar": "GM"
@@ -13,7 +13,7 @@
   "joueurs": [
     {
       "id": 1,
-      "pseudo": "Google_maitre",
+      "pseudo": "player1",
       "avatar": "GM",
       "elo": {
         "rapide": { "actuel": 1847, "debut_mois": 1732, "reference_palier": 1700 },
@@ -25,7 +25,7 @@
     },
     {
       "id": 2,
-      "pseudo": "bap_19",
+      "pseudo": "player2",
       "avatar": "B9",
       "elo": {
         "rapide": { "actuel": 1723, "debut_mois": 1680, "reference_palier": 1700 },
@@ -37,7 +37,7 @@
     },
     {
       "id": 3,
-      "pseudo": "kkstar34",
+      "pseudo": "Player3",
       "avatar": "KK",
       "elo": {
         "rapide": { "actuel": 1612, "debut_mois": 1665, "reference_palier": 1600 },
@@ -49,7 +49,7 @@
     },
     {
       "id": 4,
-      "pseudo": "Axelhapali",
+      "pseudo": "player5",
       "avatar": "AX",
       "elo": {
         "rapide": { "actuel": 1558, "debut_mois": 1443, "reference_palier": 1400 },
@@ -61,7 +61,7 @@
     },
     {
       "id": 5,
-      "pseudo": "Jean_Daniel23",
+      "pseudo": "player6",
       "avatar": "JD",
       "elo": {
         "rapide": { "actuel": 1490, "debut_mois": 1490, "reference_palier": 1400 },
@@ -73,7 +73,7 @@
     },
     {
       "id": 6,
-      "pseudo": "ReineDuNord",
+      "pseudo": "Player 4",
       "avatar": "RN",
       "elo": {
         "rapide": { "actuel": 1780, "debut_mois": 1722, "reference_palier": 1700 },
@@ -85,7 +85,7 @@
     },
     {
       "id": 7,
-      "pseudo": "PhilippeLeRoc",
+      "pseudo": "Player 7",
       "avatar": "PL",
       "elo": {
         "rapide": { "actuel": 1643, "debut_mois": 1702, "reference_palier": 1700 },
@@ -97,7 +97,7 @@
     },
     {
       "id": 8,
-      "pseudo": "MagicRook88",
+      "pseudo": "player 8",
       "avatar": "MR",
       "elo": {
         "rapide": { "actuel": 1531, "debut_mois": 1510, "reference_palier": 1500 },
@@ -151,9 +151,9 @@
     }
   ],
   "historique_joueurs_du_mois": [
-    { "mois": "Avril 2025", "pseudo": "Google_maitre", "avatar": "GM", "gain_elo": "+127", "cadence": "Rapide" },
-    { "mois": "Mars 2025", "pseudo": "ReineDuNord", "avatar": "RN", "gain_elo": "+98", "cadence": "Blitz" },
-    { "mois": "Février 2025", "pseudo": "Axelhapali", "avatar": "AX", "gain_elo": "+83", "cadence": "Rapide" },
-    { "mois": "Janvier 2025", "pseudo": "bap_19", "avatar": "B9", "gain_elo": "+61", "cadence": "Bullet" }
+    { "mois": "Avril 2025", "pseudo": "player1", "avatar": "GM", "gain_elo": "+127", "cadence": "Rapide" },
+    { "mois": "Mars 2025", "pseudo": "player5", "avatar": "RN", "gain_elo": "+98", "cadence": "Blitz" },
+    { "mois": "Février 2025", "pseudo": "player4", "avatar": "AX", "gain_elo": "+83", "cadence": "Rapide" },
+    { "mois": "Janvier 2025", "pseudo": "player1", "avatar": "B9", "gain_elo": "+61", "cadence": "Bullet" }
   ]
 }
