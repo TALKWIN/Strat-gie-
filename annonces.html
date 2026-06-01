@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Annonces — La Table des Stratèges</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>♟</text></svg>">
+</head>
+<body>
+
+<nav class="navbar" role="navigation">
+  <div class="navbar-brand">
+    <div class="navbar-logo-icon">♟</div>
+    <span class="navbar-title">La <em>Table</em> des Stratèges</span>
+  </div>
+  <button class="navbar-toggle" id="navbar-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+  <ul class="navbar-nav" id="navbar-nav">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="classement.html">Classement</a></li>
+    <li><a href="annonces.html">Annonces</a></li>
+    <li><a href="activites.html">Activités</a></li>
+    <li><a href="index.html#whatsapp" class="navbar-cta btn">♟ Rejoindre</a></li>
+    <li><a href="admin.html" class="nav-admin">⚙ Admin</a></li>
+  </ul>
+</nav>
+
+<div style="background:var(--noir);padding:52px 40px 48px;border-bottom:1px solid rgba(184,146,74,.2);">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="section-eyebrow" style="color:var(--or);">
+      <span style="background:var(--or);width:28px;height:1px;display:inline-block;opacity:.6;"></span>
+      Tableau d'affichage officiel
+      <span style="background:var(--or);width:28px;height:1px;display:inline-block;opacity:.6;"></span>
+    </div>
+    <h1 style="font-family:var(--font-titre);font-size:clamp(2.2rem,5vw,3.5rem);font-weight:700;color:#fff;margin-top:8px;">
+      <em style="color:var(--or);font-style:italic;">Annonces</em> du Club
+    </h1>
+    <div style="display:flex;gap:10px;margin-top:24px;flex-wrap:wrap;" id="filtres-annonces">
+      <button class="btn" style="padding:8px 16px;font-size:12px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.15);" onclick="filtrerAnnonces(this,'tous')">Toutes</button>
+      <button class="btn" style="padding:8px 16px;font-size:12px;background:rgba(139,38,53,.2);color:#E87F8A;border:1px solid rgba(139,38,53,.4);" onclick="filtrerAnnonces(this,'important')">🔴 Important</button>
+      <button class="btn" style="padding:8px 16px;font-size:12px;background:rgba(36,76,102,.3);color:#7BBBD8;border:1px solid rgba(36,76,102,.4);" onclick="filtrerAnnonces(this,'duel')">⚔️ Duels</button>
+      <button class="btn" style="padding:8px 16px;font-size:12px;background:rgba(184,146,74,.2);color:var(--or);border:1px solid rgba(184,146,74,.3);" onclick="filtrerAnnonces(this,'tournoi')">🏆 Tournois</button>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="annonces-grid js-zone" id="annonces-container">
+      <div class="api-loader"><div class="spinner"></div><p>Chargement…</p></div>
+    </div>
+  </div>
+</section>
+
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <span class="footer-brand">La Table des Stratèges © 2025</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="classement.html">Classement</a></li>
+      <li><a href="annonces.html">Annonces</a></li>
+      <li><a href="activites.html">Activités</a></li>
+    </ul>
+    <a href="admin.html" class="footer-admin">⚙ Espace Admin</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  function filtrerAnnonces(btn, filtre) {
+    document.querySelectorAll('.annonce-card').forEach(c => {
+      c.style.display = filtre === 'tous' || c.classList.contains('cat-'+filtre) ? '' : 'none';
+    });
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Espace Admin — La Table des Stratèges</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>♟</text></svg>">
+  <style>
+    /* ── Admin-only styles ── */
+    .admin-section {
+      background: #fff;
+      border: 1px solid var(--gris-clair);
+      border-radius: 4px;
+      padding: 32px;
+      margin-bottom: 28px;
+      box-shadow: var(--ombre);
+    }
+    .admin-section-title {
+      font-family: var(--font-titre);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--noir);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .admin-section-sub {
+      font-size: 13px;
+      color: var(--gris-moyen);
+      margin-bottom: 24px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--gris-clair);
+    }
+    .admin-input-row {
+      display: flex;
+      gap: 12px;
+      align-items: flex-end;
+      flex-wrap: wrap;
+    }
+    .admin-input-row .form-group { flex: 1; min-width: 200px; margin: 0; }
+    .btn-danger {
+      background: #FDE9EA;
+      color: var(--rouge);
+      border: 1px solid rgba(139,38,53,.25);
+      font-size: 12px;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      transition: var(--transition);
+    }
+    .btn-danger:hover { background: var(--rouge); color: #fff; }
+    #admin-flash {
+      font-size: 13px;
+      font-weight: 600;
+      min-height: 20px;
+      padding: 8px 0 0;
+      transition: opacity .5s;
+    }
+    .panneau-header {
+      background: var(--noir);
+      padding: 32px 40px;
+      border-bottom: 1px solid rgba(184,146,74,.2);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .panneau-header h1 {
+      font-family: var(--font-titre);
+      font-size: 2rem;
+      font-weight: 600;
+      color: #fff;
+    }
+    .panneau-header h1 em { color: var(--or); font-style: italic; }
+    .tag-admin {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 2px;
+      background: rgba(184,146,74,.15);
+      color: var(--or);
+      border: 1px solid rgba(184,146,74,.25);
+    }
+    select.form-control {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238C8C8C' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+      cursor: pointer;
+    }
+    textarea.form-control {
+      resize: vertical;
+      min-height: 100px;
+      line-height: 1.6;
+    }
+    .danger-zone {
+      border: 1px solid rgba(139,38,53,.2);
+      background: #FDF5F5;
+    }
+    .danger-zone .admin-section-title { color: var(--rouge); }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVBAR ── -->
+<nav class="navbar" role="navigation">
+  <div class="navbar-brand">
+    <div class="navbar-logo-icon">♟</div>
+    <span class="navbar-title">La <em>Table</em> des Stratèges</span>
+  </div>
+  <button class="navbar-toggle" id="navbar-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+  <ul class="navbar-nav" id="navbar-nav">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="classement.html">Classement</a></li>
+    <li><a href="annonces.html">Annonces</a></li>
+    <li><a href="activites.html">Activités</a></li>
+    <li><a href="admin.html" class="nav-admin">⚙ Admin</a></li>
+  </ul>
+</nav>
+
+<!-- ══════════════════════════════
+     ÉCRAN DE CONNEXION
+     ══════════════════════════════ -->
+<main id="admin-login-section">
+  <div class="admin-login">
+    <div class="admin-card">
+      <div style="text-align:center;font-size:48px;margin-bottom:20px;">⚙</div>
+      <h1 class="admin-title" style="text-align:center;">Espace Admin</h1>
+      <p class="admin-sub" style="text-align:center;">
+        Accès réservé aux administrateurs du club.<br>
+        Mot de passe requis pour continuer.
+      </p>
+      <div class="form-group">
+        <label class="form-label" for="admin-pass">Mot de passe</label>
+        <input type="password" id="admin-pass" class="form-control"
+               placeholder="••••••••••••" autocomplete="current-password">
+      </div>
+      <button class="btn btn-primary" style="width:100%;justify-content:center;" id="btn-admin-login">
+        Accéder au panneau →
+      </button>
+      <p id="admin-msg" style="text-align:center;margin-top:14px;font-size:13px;font-weight:500;"></p>
+      <div style="margin-top:28px;padding-top:24px;border-top:1px solid var(--gris-clair);text-align:center;">
+        <a href="index.html" style="font-size:13px;color:var(--gris-moyen);">← Retour au site</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- ══════════════════════════════
+     PANNEAU D'ADMINISTRATION
+     (caché par défaut, révélé après auth)
+     ══════════════════════════════ -->
+<div id="admin-panneau" style="display:none;">
+
+  <!-- En-tête du panneau -->
+  <div class="panneau-header">
+    <div>
+      <div style="font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--or);margin-bottom:8px;">
+        Panneau d'administration
+      </div>
+      <h1>La <em>Table</em> des Stratèges</h1>
+    </div>
+    <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+      <span class="tag-admin">⚙ Mode Admin</span>
+      <button id="btn-deconnexion" class="btn-refresh"
+              style="border-color:rgba(139,38,53,.3);color:#E87F8A;">
+        ⎋ Déconnexion
+      </button>
+      <a href="index.html" style="font-size:13px;color:rgba(255,255,255,.4);">← Site public</a>
+    </div>
+  </div>
+
+  <div class="container" style="padding-top:48px;padding-bottom:80px;">
+
+    <!-- Message flash global -->
+    <p id="admin-flash" style="font-size:13px;font-weight:600;min-height:20px;margin-bottom:16px;transition:opacity .5s;"></p>
+
+    <!-- ─────────────────────────────────────
+         SECTION 1 : Gestion des joueurs
+         ───────────────────────────────────── -->
+    <div class="admin-section">
+      <div class="admin-section-title">♟ Membres du club</div>
+      <p class="admin-section-sub">
+        Ajoutez ou retirez des membres. Seul le pseudo Chess.com est nécessaire.
+        Les données Elo sont récupérées automatiquement via l'API Chess.com.
+      </p>
+
+      <!-- Formulaire ajout -->
+      <form id="form-ajouter-joueur" autocomplete="off">
+        <div class="admin-input-row">
+          <div class="form-group">
+            <label class="form-label" for="input-pseudo-joueur">Pseudo Chess.com exact</label>
+            <input type="text" id="input-pseudo-joueur" class="form-control"
+                   placeholder="ex : le_maitre226" spellcheck="false">
+          </div>
+          <button type="submit" class="btn btn-primary" style="flex-shrink:0;padding:12px 24px;">
+            + Ajouter
+          </button>
+        </div>
+      </form>
+
+      <!-- Liste des membres -->
+      <div style="margin-top:24px;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+                    color:var(--gris-moyen);margin-bottom:12px;">
+          Membres enregistrés
+        </div>
+        <div id="admin-liste-joueurs"></div>
+      </div>
+    </div>
+
+    <!-- ─────────────────────────────────────
+         SECTION 2 : Gestion des annonces
+         ───────────────────────────────────── -->
+    <div class="admin-section">
+      <div class="admin-section-title">📋 Annonces du club</div>
+      <p class="admin-section-sub">
+        Publiez une nouvelle annonce. Elle apparaîtra immédiatement sur la page Annonces
+        et en aperçu sur la page d'accueil.
+      </p>
+
+      <!-- Formulaire création annonce -->
+      <form id="form-creer-annonce" autocomplete="off">
+        <div class="form-group" style="margin-bottom:16px;">
+          <label class="form-label" for="annonce-titre">Titre de l'annonce</label>
+          <input type="text" id="annonce-titre" class="form-control"
+                 placeholder="ex : Tournoi mensuel — Résultats finaux">
+        </div>
+        <div class="form-group" style="margin-bottom:16px;">
+          <label class="form-label" for="annonce-texte">Contenu</label>
+          <textarea id="annonce-texte" class="form-control"
+                    placeholder="Corps du texte de l'annonce…"></textarea>
+        </div>
+        <div class="admin-input-row">
+          <div class="form-group">
+            <label class="form-label" for="annonce-categorie">Catégorie</label>
+            <select id="annonce-categorie" class="form-control">
+              <option value="important">🔴 Important</option>
+              <option value="tournoi">🏆 Tournoi</option>
+              <option value="duel">⚔️ Duel / Choc</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary" style="flex-shrink:0;padding:12px 28px;">
+            Publier l'annonce
+          </button>
+        </div>
+      </form>
+
+      <!-- Liste des annonces publiées -->
+      <div style="margin-top:28px;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+                    color:var(--gris-moyen);margin-bottom:12px;">
+          Annonces publiées
+        </div>
+        <div id="admin-liste-annonces"></div>
+      </div>
+    </div>
+
+    <!-- ─────────────────────────────────────
+         SECTION 3 : Zone de danger
+         ───────────────────────────────────── -->
+    <div class="admin-section danger-zone">
+      <div class="admin-section-title">⚠ Zone de danger</div>
+      <p class="admin-section-sub">
+        Réinitialise complètement toutes les données du site (joueurs + annonces)
+        stockées en local. Cette action est irréversible.
+      </p>
+      <button id="btn-reset-data" class="btn-danger">
+        ⚠ Réinitialiser toutes les données
+      </button>
+    </div>
+
+  </div><!-- /.container -->
+</div><!-- /#admin-panneau -->
+
+<!-- ── FOOTER ── -->
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <span class="footer-brand">La Table des Stratèges © 2025</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="classement.html">Classement</a></li>
+      <li><a href="annonces.html">Annonces</a></li>
+      <li><a href="activites.html">Activités</a></li>
+    </ul>
+    <span class="footer-admin" style="color:rgba(255,255,255,.15);">Panneau d'administration</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
