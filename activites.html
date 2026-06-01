@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activités — La Table des Stratèges</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>♟</text></svg>">
+</head>
+<body>
+
+<nav class="navbar" role="navigation">
+  <div class="navbar-brand">
+    <div class="navbar-logo-icon">♟</div>
+    <span class="navbar-title">La <em>Table</em> des Stratèges</span>
+  </div>
+  <button class="navbar-toggle" id="navbar-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+  <ul class="navbar-nav" id="navbar-nav">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="classement.html">Classement</a></li>
+    <li><a href="annonces.html">Annonces</a></li>
+    <li><a href="activites.html">Activités</a></li>
+    <li><a href="index.html#whatsapp" class="navbar-cta btn">♟ Rejoindre</a></li>
+    <li><a href="admin.html" class="nav-admin">⚙ Admin</a></li>
+  </ul>
+</nav>
+
+<div style="background:var(--noir);padding:52px 40px 48px;border-bottom:1px solid rgba(184,146,74,.2);">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="section-eyebrow" style="color:var(--or);">
+      <span style="background:var(--or);width:28px;height:1px;display:inline-block;opacity:.6;"></span>
+      Fil d'actualité du club
+      <span style="background:var(--or);width:28px;height:1px;display:inline-block;opacity:.6;"></span>
+    </div>
+    <h1 style="font-family:var(--font-titre);font-size:clamp(2.2rem,5vw,3.5rem);font-weight:700;color:#fff;margin-top:8px;">
+      <em style="color:var(--or);font-style:italic;">Activités</em> du Mois
+    </h1>
+    <p style="color:rgba(255,255,255,.45);margin-top:10px;font-size:14px;max-width:540px;">
+      Progressions, badges et exploits calculés en direct depuis Chess.com.
+    </p>
+  </div>
+</div>
+
+<section class="section" style="padding-bottom:0;">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Distinction suprême</div>
+      <h2 class="section-title">Hall de la <em>Gloire</em></h2>
+    </div>
+    <div class="js-zone" id="jdm-container">
+      <div class="api-loader"><div class="spinner"></div><p>Calcul en cours…</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Ce mois-ci</div>
+      <h2 class="section-title"><em>Chronique</em> des Stratèges</h2>
+    </div>
+    <div class="activity-feed js-zone" id="flux-activite">
+      <div class="api-loader"><div class="spinner"></div><p>Chargement du flux…</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-eyebrow">Palmarès historique</div>
+      <h2 class="section-title">Les <em>Anciens Rois</em></h2>
+    </div>
+    <div class="hall-grid js-zone" id="anciens-rois">
+      <div class="api-loader" style="grid-column:1/-1;"><div class="spinner"></div><p>Chargement…</p></div>
+    </div>
+  </div>
+</section>
+
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <span class="footer-brand">La Table des Stratèges © 2025</span>
+    <ul class="footer-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="classement.html">Classement</a></li>
+      <li><a href="annonces.html">Annonces</a></li>
+      <li><a href="activites.html">Activités</a></li>
+    </ul>
+    <a href="admin.html" class="footer-admin">⚙ Espace Admin</a>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
